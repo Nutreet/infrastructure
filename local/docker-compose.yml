@@ -1,0 +1,21 @@
+version: "3"
+
+name: nutreet
+
+services:
+  emulator:
+    build: .
+    ports:
+      - 9099:9099
+      - 8080:8080
+      - 4001:4001
+      - 8085:8085
+      - 9199:9199
+      - 4000:4000
+    volumes:
+      - ~/.config/gcloud:/root/.config/gcloud
+      - emulator-data:/data
+      - ../firebase:/app/firebase:ro
+
+volumes:
+  emulator-data:
